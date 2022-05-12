@@ -45,4 +45,6 @@ export async function getResturantById(id) {
 
 export async function updateResturant(resturant) {
   const response = await client.from('resturants').update([resturant]).match({ id: resturant.id });
+
+  return response.body;
 }
