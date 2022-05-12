@@ -22,7 +22,7 @@ export default function AuthPage({ setUser }) {
   }
 
   async function handleSignIn(e) {
-    e.preventDefault;
+    e.preventDefault();
     await signIn(signInEmail, signInPassword);
 
     const user = getUser();
@@ -49,6 +49,7 @@ export default function AuthPage({ setUser }) {
         <label>
           Password
           <input
+            type="password"
             value={signUpPassword}
             onChange={(e) =>
               setSignUpFormData({
@@ -77,6 +78,7 @@ export default function AuthPage({ setUser }) {
         <label>
           Password
           <input
+            type="password"
             value={signInPassword}
             onChange={(e) =>
               setSignInFormData({
