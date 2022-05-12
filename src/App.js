@@ -1,14 +1,14 @@
 import './App.css';
 import { useState, useEffect } from 'react';
 import { getUser, logout } from './services/fetch-utils';
-import { Router, Switch, NavLink, Route, Redirect } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, NavLink, Route, Redirect } from 'react-router-dom';
 import AuthPage from './AuthPage';
 import CreatePage from './CreatePage';
 import ListPage from './ListPage';
 import UpdatePage from './UpdatePage';
 
 function App() {
-  const [user, setUser] = useState('');
+  const [user, setUser] = useState();
 
   useEffect(() => {
     const user = getUser();
@@ -25,7 +25,7 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <header className="App-header">
+        <header>
           {user ? (
             <div>
               <NavLink to="/resturants">Resturant List</NavLink>
